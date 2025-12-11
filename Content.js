@@ -167,11 +167,8 @@ style.textContent = `
 }
 
 @keyframes lightningFlash {
-  0%, 100% { opacity: 0; }
-  20% { opacity: var(--flash1, 0.8); }
-  40% { opacity: var(--flash2, 0.4); }
-  60% { opacity: var(--flash3, 1); }
-  80% { opacity: var(--flash4, 0.3); }
+  from { background-position-y: 0; }
+  to   { background-position-y: 100%; }
 }
 `;
 document.head.appendChild(style);
