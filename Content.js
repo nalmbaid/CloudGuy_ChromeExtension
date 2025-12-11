@@ -179,11 +179,10 @@ document.head.appendChild(style);
 
 
 function showWeather(mode, clickY = null, clickX = null) {
-  // Remove previous weather
-  if (activeWeather) activeWeather.remove();
-  activeWeather = null;
+  // Remove previous weather — but NEVER before a lightning flash
+  if (activeWeather && mode !== "lightning") activeWeather.remove();
+  if (mode !== "lightning") activeWeather = null;
 
-  if (mode === "blank") return;
 
   /* ---------------------------------------------------------
      WATERDROP BANNER (unchanged)
